@@ -1,0 +1,13 @@
+﻿@inherits TopRowBase
+
+<div class="topRow">
+    <TopRowTitle />
+    <TopRowButton Title="Algorithms" DropdownItems="@AlgorithmsDropdownItems"/>
+    <TopRowButton Title="Mazes & Patterns" />
+    <TopRowButton Title="Add Bomb" />
+    <TopRowButton Title="Visualize " GetStringForDisplay="@GridState.AlgorithmString" CSSClasses="mainButton" OnClick="@GridState.RunAlgorithm"/>
+    <TopRowButton Title="Clear Board" OnClick="@GridState.ClearTheBoard"/>
+    <TopRowButton Title="Full reset" OnClick="@GridState.FullReset"/>
+    <TopRowButton Title="Clear Path" />
+    <TopRowButton Title="Speed: Speed" DropdownItems="@SpeedDropdownItems" GetStringForDisplay="@StringForDisplayForSpeed"/>
+</div>

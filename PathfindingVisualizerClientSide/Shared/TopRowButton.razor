@@ -1,0 +1,35 @@
+﻿@inherits TopRowButtonBase
+@using PathfindingVisualizerClientSide.Models
+
+<button @onclick="@OnClick" class="btn topRowButton @CSSClasses">
+    <div @onclick="@FlipDisplayDropdownItems" class="title">
+        @Title
+        @GetStringForDisplay
+        @if (DropdownItems != null && !DisplayDropdownItem)
+        {
+            <div class="showOrHide">
+                +
+            </div>
+        }
+        else if(DropdownItems != null && DisplayDropdownItem)
+        {
+            <div class="showOrHide">
+                -
+            </div>
+        }
+    </div>
+    @if(DropdownItems != null && DropdownItems.Count != 0)
+    {
+        @if (DisplayDropdownItem)
+        {
+            <div class="dropdownItems">
+                @foreach (DropdownItem dropdownItem in DropdownItems)
+                {
+                    <div @onclick="@(() => dropdownItem.Action(dropdownItem.ActionParameter))" class="dropdown-item">
+                        @dropdownItem.Title
+                    </div>
+                }
+            </div>
+        }
+    }
+</button>

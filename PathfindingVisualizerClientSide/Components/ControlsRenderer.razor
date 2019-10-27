@@ -1,0 +1,12 @@
+﻿@inherits ControlsRendererBase
+
+    <div class="controlsRenderer">
+        <ControlRenderer Title="Start Node" OnClick="@GridState.SetDrawState" OnClickParameter="Start" NodeRendererClasses="@(NodeRendererClassesForStart)"/>
+        <ControlRenderer Title="Target Node" OnClick="@GridState.SetDrawState" OnClickParameter="Finish" NodeRendererClasses="@(NodeRendererClassesForFinish)"/>
+        <ControlRenderer Title="Bomb Node" NodeRendererClasses="@(NodeRendererClassesForBomb)"/>
+        <ControlRenderer Title="Weighted Node" OnClick="@GridState.SetDrawState" OnClickParameter="Weight" NodeRendererClasses="@(NodeRendererClassesForWeighted)"/>
+        <ControlRenderer Title="Wall Node" OnClick="@GridState.SetDrawState" OnClickParameter="Wall" NodeRendererClasses="@(NodeRendererClassesForWall)"/>
+        <ControlRenderer Title="Unvisited Node" NodeRendererClasses="@(NodeRendererClassesForUnvisited)"/>
+        <ControlRenderer Title="Visited Nodes" NodeRendererClasses="@(NodeRendererClassesForVisited)"/>
+        <ControlRenderer Title="Shortest-path Node" NodeRendererClasses="@(NodeRendererClassesForShortest)"/>
+    </div>

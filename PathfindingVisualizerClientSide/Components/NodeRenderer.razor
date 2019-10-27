@@ -1,0 +1,5 @@
+﻿@inherits NodeRendererBase
+
+<div @onmousedown="@OnMouseDown" @onmouseover="@OnMouseEnter" @onmouseup="@OnMouseUp" class="nodeRenderer @(MyNode.IsStart ? " isStart " : "") @(MyNode.IsFinish ? " isFinish " : "") @(MyNode.DrawVisited ? " drawVisited " : "") @(MyNode.IsShortestPath ? " isShortest " : "") @(MyNode.IsWall ? " isWall " : "") @(MyNode.Weight > 0 ? " isWeighted " : "")">
+    
+</div>

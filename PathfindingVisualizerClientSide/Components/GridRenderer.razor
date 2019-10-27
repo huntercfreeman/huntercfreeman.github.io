@@ -1,0 +1,15 @@
+﻿@using PathfindingVisualizerClientSide.Models
+@namespace PathfindingVisualizerClientSide.Components
+@inherits GridRendererBase
+
+    <div class="gridRenderer">
+        @foreach (List<Node> row in GridState.Grid)
+        {
+            <div class="nodeRow">
+                @foreach (Node node in row)
+                {
+                    <NodeRenderer MyNode="@node" />
+                }
+            </div>
+        }
+    </div>
